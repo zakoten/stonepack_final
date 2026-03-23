@@ -21,8 +21,10 @@ dependencies {
     modImplementation 'net.fabricmc:fabric-loader:0.16.14'
     modImplementation 'net.fabricmc.fabric-api:fabric-api:0.140.2+1.21.11'
 
-    // Includi Polymer bundled completo — contiene tutto incluso registry-sync-manipulator
-    modImplementation include('eu.pb4:polymer-bundled:0.15.2+1.21.11')
+    modImplementation include('eu.pb4:polymer-core:0.15.2+1.21.11')
+    modImplementation include('eu.pb4:polymer-resource-pack:0.15.2+1.21.11')
+    modImplementation include('eu.pb4:polymer-autohost:0.15.2+1.21.11')
+    modImplementation include('eu.pb4:polymer-registry-sync-manipulator:0.15.2+1.21.11')
 }
 
 java {
