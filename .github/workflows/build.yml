@@ -3,8 +3,6 @@ name: Build Mod
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -40,14 +38,3 @@ jobs:
         name: tramonto-stonepack
         path: build/libs/tramonto-stonepack-*.jar
         if-no-files-found: error
-
-    - name: Create Release
-      if: github.ref == 'refs/heads/main'
-      uses: softprops/action-gh-release@v2
-      with:
-        tag_name: v1.0.${{ github.run_number }}
-        name: Tramonto Stone Pack v1.0.${{ github.run_number }}
-        files: build/libs/tramonto-stonepack-*.jar
-        generate_release_notes: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
