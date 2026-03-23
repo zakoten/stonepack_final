@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "stonepack",
+  "version": "1.0.0",
+  "name": "Tramonto Stone Pack",
+  "description": "143 missing stone blocks for Minecraft 1.21.11 — server-side only, powered by Polymer.",
+  "authors": ["Tramonto"],
+  "license": "MIT",
+  "environment": "server",
+  "entrypoints": {
+    "main": ["net.tramonto.stonepack.StonePackMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.11",
+    "fabric-api": "*",
+    "polymer-core": "*"
+  }
+}

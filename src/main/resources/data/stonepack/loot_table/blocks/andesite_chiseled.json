@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:block",
+  "pools": [{
+    "rolls": 1,
+    "entries": [{
+      "type": "minecraft:item",
+      "name": "stonepack:andesite_chiseled"
+    }],
+    "conditions": [{
+      "condition": "minecraft:survives_explosion"
+    }]
+  }]
+}

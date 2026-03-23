@@ -1,0 +1,7 @@
+{
+  "parent": "stonepack:block/mossy_block",
+  "textures": {
+    "all": "stonepack:block/andesite_tiles",
+    "overlay": "stonepack:block/moss_overlay_tiles"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:prismarine"
+  },
+  "result": {
+    "id": "stonepack:prismarine_cracked_bricks",
+    "count": 1
+  }
+}

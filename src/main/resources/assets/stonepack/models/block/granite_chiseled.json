@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "stonepack:block/granite_chiseled_top",
+    "side": "stonepack:block/granite_chiseled_side"
+  }
+}

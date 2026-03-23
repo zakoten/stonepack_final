@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:basalt"
+  },
+  "result": {
+    "id": "stonepack:mossy_basalt_cracked_bricks",
+    "count": 1
+  }
+}
