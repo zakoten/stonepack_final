@@ -6,13 +6,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.BlockItem;
+import eu.pb4.polymer.core.api.item.PolymerBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
-import java.util.function.Function;
 
 public class ModBlocks {
 
@@ -201,7 +200,7 @@ public class ModBlocks {
         );
         Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
         Registry.register(BuiltInRegistries.ITEM, itemKey,
-            new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix())
+            new PolymerBlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix())
         );
         return block;
     }
