@@ -6,7 +6,7 @@
   "description": "143 missing stone blocks for Minecraft 1.21.11 — server-side only, powered by Polymer.",
   "authors": ["Tramonto"],
   "license": "MIT",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
     "main": ["net.tramonto.stonepack.StonePackMod"]
   },
