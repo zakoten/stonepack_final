@@ -1,17 +1,16 @@
 package net.tramonto.stonepack;
 
 import eu.pb4.polymer.core.api.block.SimplePolymerBlock;
+import eu.pb4.polymer.core.api.item.PolymerBlockItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
-import eu.pb4.polymer.core.api.item.PolymerBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-
 
 public class ModBlocks {
 
@@ -186,22 +185,31 @@ public class ModBlocks {
     public static final Block MOSSY_RED_SANDSTONE_CRACKED_BRICKS = reg("mossy_red_sandstone_cracked_bricks", Blocks.MOSSY_STONE_BRICKS, 0.8f, 0.8f);
     public static final Block MOSSY_DRIPSTONE_CRACKED_BRICKS     = reg("mossy_dripstone_cracked_bricks",     Blocks.MOSSY_STONE_BRICKS, 1.5f, 1.5f);
 
-    // ── Helper ──────────────────────────────────────────────────
     private static Block reg(String name, Block base, float hardness, float resistance) {
-        ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK,
-            Identifier.fromNamespaceAndPath("stonepack", name));
-        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("stonepack", name));
+        ResourceKey<Block> blockKey = ResourceKey.create(
+            Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("stonepack", name)
+        );
+
+        ResourceKey<Item> itemKey = ResourceKey.create(
+            Registries.ITEM,
+            Identifier.fromNamespaceAndPath("stonepack", name)
+        );
+
         Block block = new SimplePolymerBlock(
             BlockBehaviour.Properties.ofFullCopy(base)
                 .strength(hardness, resistance)
                 .setId(blockKey),
             base
         );
+
         Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
-        Registry.register(BuiltInRegistries.ITEM, itemKey,
+        Registry.register(
+            BuiltInRegistries.ITEM,
+            itemKey,
             new PolymerBlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix())
         );
+
         return block;
     }
 
