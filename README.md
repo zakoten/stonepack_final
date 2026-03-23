@@ -41,22 +41,3 @@ src/main/resources/assets/stonepack/textures/block/
 - `moss_overlay_tiles.png`
 
 **Total: 83 texture files** covering all 143 blocks.
-
----
-
-## How to build (GitHub Actions)
-
-1. Push this repo to GitHub
-2. GitHub Actions builds automatically
-3. Download the `.jar` from Actions → Artifacts or Releases
-4. Put the `.jar` in your Fabric server's `mods/` folder
-
-## Updating to a new Minecraft version
-
-Change these 3 lines in `build.gradle`:
-```groovy
-minecraft 'com.mojang:minecraft:1.XX.XX'
-modImplementation 'net.fabricmc.fabric-api:fabric-api:X.XXX.X+1.XX.XX'
-modImplementation include('eu.pb4:polymer-core:X.XX.X+1.XX.XX')
-```
-Find latest versions at: https://fabricmc.net/develop/
