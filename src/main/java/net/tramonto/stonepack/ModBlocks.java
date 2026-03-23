@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -190,9 +190,9 @@ public class ModBlocks {
     // ── Helper ──────────────────────────────────────────────────
     private static Block reg(String name, Block base, float hardness, float resistance) {
         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK,
-            ResourceLocation.fromNamespaceAndPath("stonepack", name));
+            Identifier.fromNamespaceAndPath("stonepack", name));
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM,
-            ResourceLocation.fromNamespaceAndPath("stonepack", name));
+            Identifier.fromNamespaceAndPath("stonepack", name));
         Block block = new SimplePolymerBlock(
             BlockBehaviour.Properties.ofFullCopy(base)
                 .strength(hardness, resistance)
