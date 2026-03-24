@@ -26,12 +26,16 @@ public class StonePackMod implements ModInitializer {
             Identifier itemId = Registries.ITEM.getId(original.getItem());
 
             if (itemId != null && MOD_ID.equals(itemId.getNamespace())) {
-                ItemStack out = new ItemStack(Items.RED_STAINED_GLASS, client.getCount());
-                out.setCustomName(
-                        Text.literal("Resource Pack Required")
-                                .formatted(Formatting.RED)
-                );
-                return out;
+
+                // 👉 fallback SOLO se il player NON ha il resource pack
+                if (!context.hasResourcePack()) {
+                    ItemStack out = new ItemStack(Items.RED_STAINED_GLASS, client.getCount());
+                    out.setCustomName(
+                            Text.literal("Resource Pack Required")
+                                    .formatted(Formatting.RED)
+                    );
+                    return out;
+                }
             }
 
             return client;
