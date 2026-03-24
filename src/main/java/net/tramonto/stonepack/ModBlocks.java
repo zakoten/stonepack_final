@@ -202,7 +202,7 @@ public class ModBlocks {
     Registry.register(
         Registries.ITEM,
         id,
-        new PolymerBlockItem(
+        new StonepackPolymerBlockItem(
             block,
             new Item.Settings()
                 .registryKey(itemKey)
