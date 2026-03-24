@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.Identifier;
 import xyz.nucleoid.packettweaker.PacketContext;
 
 public class StonepackPolymerBlockItem extends PolymerBlockItem {
@@ -16,5 +17,10 @@ public class StonepackPolymerBlockItem extends PolymerBlockItem {
     @Override
     public Item getPolymerItem(ItemStack itemStack, PacketContext context) {
         return Items.RED_STAINED_GLASS;
+    }
+
+    @Override
+    public Identifier getPolymerItemModel(ItemStack itemStack, PacketContext context) {
+        return Identifier.ofVanilla("item/red_stained_glass");
     }
 }
