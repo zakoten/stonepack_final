@@ -184,32 +184,22 @@ public class ModBlocks {
     public static final Block MOSSY_DRIPSTONE_CRACKED_BRICKS     = reg("mossy_dripstone_cracked_bricks",     Blocks.MOSSY_STONE_BRICKS, 1.5f, 1.5f);
 
     private static Block reg(String name, Block base, float hardness, float resistance) {
-        ResourceKey<Block> blockKey = ResourceKey.create(
-            Registries.BLOCK,
-            Identifier.fromNamespaceAndPath("stonepack", name)
-        );
+    Identifier id = Identifier.of("stonepack", name);
 
-        ResourceKey<Item> itemKey = ResourceKey.create(
-            Registries.ITEM,
-            Identifier.fromNamespaceAndPath("stonepack", name)
-        );
+    Block block = new SimplePolymerBlock(
+        AbstractBlock.Settings.copy(base).strength(hardness, resistance),
+        base
+    );
 
-        Block block = new SimplePolymerBlock(
-            BlockBehaviour.Properties.ofFullCopy(base)
-                .strength(hardness, resistance)
-                .setId(blockKey),
-            base
-        );
+    Registry.register(Registries.BLOCK, id, block);
+    Registry.register(
+        Registries.ITEM,
+        id,
+        new PolymerBlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey())
+    );
 
-        Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
-        Registry.register(
-            BuiltInRegistries.ITEM,
-            itemKey,
-            new PolymerBlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix())
-        );
-
-        return block;
-    }
+    return block;
+}
 
     public static void initialize() {}
 }
