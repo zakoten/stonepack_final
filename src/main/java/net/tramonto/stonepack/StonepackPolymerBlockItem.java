@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import xyz.nucleoid.packettweaker.PacketContext;
 
 public class StonepackPolymerBlockItem extends PolymerBlockItem {
 
@@ -13,7 +14,7 @@ public class StonepackPolymerBlockItem extends PolymerBlockItem {
     }
 
     @Override
-    public Item getPolymerItem(ItemStack itemStack, Item.Settings settings) {
+    public Item getPolymerItem(ItemStack itemStack, PacketContext context) {
         return Items.RED_STAINED_GLASS;
     }
 }
