@@ -1,7 +1,6 @@
 package net.tramonto.stonepack;
 
 import eu.pb4.polymer.core.api.block.SimplePolymerBlock;
-import eu.pb4.polymer.core.api.item.PolymerBlockItem;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -202,7 +201,7 @@ public class ModBlocks {
     Registry.register(
         Registries.ITEM,
         id,
-        new PolymerBlockItem(
+        new StonepackPolymerBlockItem(
             block,
             new Item.Settings()
                 .registryKey(itemKey)
