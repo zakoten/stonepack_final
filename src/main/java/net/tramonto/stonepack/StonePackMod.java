@@ -28,13 +28,7 @@ public class StonePackMod implements ModInitializer {
                     || original.isOf(ModBlocks.RED_SANDSTONE_BRICKS.asItem())
                     || original.isOf(ModBlocks.DRIPSTONE_BRICKS.asItem())) {
 
-                ItemStack out = new ItemStack(Items.RED_STAINED_GLASS, client.getCount());
-
-                if (client.getNbt() != null) {
-                    out.setNbt(client.getNbt().copy());
-                }
-
-                return out;
+                return new ItemStack(Items.RED_STAINED_GLASS, client.getCount());
             }
 
             return client;
