@@ -8,6 +8,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
@@ -186,8 +188,13 @@ public class ModBlocks {
     private static Block reg(String name, Block base, float hardness, float resistance) {
     Identifier id = Identifier.of("stonepack", name);
 
+    RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
+    RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id);
+
     Block block = new SimplePolymerBlock(
-        AbstractBlock.Settings.copy(base).strength(hardness, resistance),
+        AbstractBlock.Settings.copy(base)
+            .registryKey(blockKey)
+            .strength(hardness, resistance),
         base
     );
 
@@ -195,7 +202,12 @@ public class ModBlocks {
     Registry.register(
         Registries.ITEM,
         id,
-        new PolymerBlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey())
+        new PolymerBlockItem(
+            block,
+            new Item.Settings()
+                .registryKey(itemKey)
+                .useBlockPrefixedTranslationKey()
+        )
     );
 
     return block;
