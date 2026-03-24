@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
+import org.jetbrains.annotations.Nullable;
 
 public class StonepackPolymerBlockItem extends BlockItem implements PolymerItem {
 
@@ -15,7 +16,7 @@ public class StonepackPolymerBlockItem extends BlockItem implements PolymerItem 
     }
 
     @Override
-    public ItemStack getPolymerItemStack(ItemStack itemStack, ServerPlayerEntity player) {
-        return new ItemStack(Items.RED_STAINED_GLASS);
+    public ItemStack getPolymerItemStack(ItemStack itemStack, @Nullable ServerPlayerEntity player) {
+        return new ItemStack(Items.RED_STAINED_GLASS, itemStack.getCount());
     }
 }
