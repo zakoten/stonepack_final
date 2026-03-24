@@ -1,6 +1,6 @@
 package net.tramonto.stonepack;
 
-import eu.pb4.polymer.common.api.PacketContext;
+import commonnetwork.networking.data.PacketContext;
 import eu.pb4.polymer.core.api.item.PolymerItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
