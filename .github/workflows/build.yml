@@ -16,16 +16,7 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
-    - name: Fix stonecutter recipes
-      run: python fix_stonecutter_recipes.py
-
-    - name: Commit fixed recipes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add src/main/resources/data/stonepack/recipe
-        git diff --cached --quiet || git commit -m "Auto-fix stonecutter recipes"
-        git push    
+   
     - name: Download gradle wrapper jar
       run: |
         mkdir -p gradle/wrapper
