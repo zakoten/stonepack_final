@@ -10,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import eu.pb4.polymer.core.api.item.PolymerBlockItem;
 
 public class ModBlocks {
 
