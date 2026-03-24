@@ -2,15 +2,13 @@ package net.tramonto.stonepack;
 
 import eu.pb4.polymer.core.api.block.SimplePolymerBlock;
 import eu.pb4.polymer.core.api.item.PolymerBlockItem;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
