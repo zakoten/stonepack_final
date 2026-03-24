@@ -16,8 +16,7 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
-    - name: Fix stonecutter recipes
-      run: python fix_stonecutter_recipes.py 
+        
     - name: Download gradle wrapper jar
       run: |
         mkdir -p gradle/wrapper
