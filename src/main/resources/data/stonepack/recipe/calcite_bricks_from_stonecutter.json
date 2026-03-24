@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:calcite"
-  },
+  "ingredient": "minecraft:calcite",
   "result": {
     "id": "stonepack:calcite_bricks",
     "count": 1

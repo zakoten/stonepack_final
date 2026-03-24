@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:basalt"
-  },
+  "ingredient": "minecraft:basalt",
   "result": {
     "id": "stonepack:mossy_basalt_bricks",
     "count": 1

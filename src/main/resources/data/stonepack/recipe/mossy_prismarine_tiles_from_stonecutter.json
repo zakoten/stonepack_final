@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:prismarine"
-  },
+  "ingredient": "minecraft:prismarine",
   "result": {
     "id": "stonepack:mossy_prismarine_tiles",
     "count": 1
