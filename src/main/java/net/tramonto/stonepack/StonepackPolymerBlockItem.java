@@ -16,6 +16,7 @@ public class StonepackPolymerBlockItem extends PolymerBlockItem {
 
     @Override
     public Item getPolymerItem(ItemStack itemStack, PacketContext context) {
+        StonePackMod.LOGGER.info("getPolymerItem called!");
         return Items.RED_STAINED_GLASS;
     }
 
