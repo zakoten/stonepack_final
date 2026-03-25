@@ -19,8 +19,4 @@ public class StonepackPolymerBlockItem extends PolymerBlockItem {
         return Items.RED_STAINED_GLASS;
     }
 
-    @Override
-    public Identifier getPolymerItemModel(ItemStack itemStack, PacketContext context) {
-        return Identifier.ofVanilla("item/red_stained_glass");
-    }
 }
