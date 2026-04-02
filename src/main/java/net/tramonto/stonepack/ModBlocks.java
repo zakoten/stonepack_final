@@ -1,8 +1,11 @@
 package net.tramonto.stonepack;
 
 import eu.pb4.polymer.core.api.block.SimplePolymerBlock;
+import eu.pb4.polymer.core.api.item.PolymerBlockItem;
+import eu.pb4.polymer.resourcepack.api.PolymerBlockResourceUtils;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -10,14 +13,16 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import eu.pb4.polymer.core.api.item.PolymerBlockItem;
 
 public class ModBlocks {
 
     // ── BRICKS (8) ──────────────────────────────────────────────
     public static final Block GRANITE_BRICKS           = reg("granite_bricks",           Blocks.GRANITE,                   3.0f, 6.0f);
     public static final Block DIORITE_BRICKS           = reg("diorite_bricks",           Blocks.DIORITE,                   3.0f, 6.0f);
-    public static final Block ANDESITE_BRICKS          = reg("andesite_bricks",          Blocks.ANDESITE,                  3.0f, 6.0f);
+
+    // TEST textured block
+    public static final Block ANDESITE_BRICKS          = regTextured("andesite_bricks", Blocks.ANDESITE, 3.0f, 6.0f);
+
     public static final Block CALCITE_BRICKS           = reg("calcite_bricks",           Blocks.CALCITE,                   0.75f, 0.75f);
     public static final Block SANDSTONE_BRICKS         = reg("sandstone_bricks",         Blocks.SANDSTONE,                 0.8f, 0.8f);
     public static final Block BASALT_BRICKS            = reg("basalt_bricks",            Blocks.BASALT,                    1.25f, 4.2f);
@@ -186,32 +191,63 @@ public class ModBlocks {
     public static final Block MOSSY_DRIPSTONE_CRACKED_BRICKS     = reg("mossy_dripstone_cracked_bricks",     Blocks.MOSSY_STONE_BRICKS, 1.5f, 1.5f);
 
     private static Block reg(String name, Block base, float hardness, float resistance) {
-    Identifier id = Identifier.of("stonepack", name);
+        Identifier id = Identifier.of("stonepack", name);
 
-    RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
-    RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id);
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
+        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id);
 
-    Block block = new SimplePolymerBlock(
-        AbstractBlock.Settings.copy(base)
-            .registryKey(blockKey)
-            .strength(hardness, resistance),
-        base
-    );
+        Block block = new SimplePolymerBlock(
+            AbstractBlock.Settings.copy(base)
+                .registryKey(blockKey)
+                .strength(hardness, resistance),
+            base
+        );
 
-    Registry.register(Registries.BLOCK, id, block);
-    Registry.register(
-        Registries.ITEM,
-        id,
-        new StonepackPolymerBlockItem(
-            block,
-            new Item.Settings()
-                .registryKey(itemKey)
-                .useBlockPrefixedTranslationKey()
-        )
-    );
+        Registry.register(Registries.BLOCK, id, block);
+        Registry.register(
+            Registries.ITEM,
+            id,
+            new StonepackPolymerBlockItem(
+                block,
+                new Item.Settings()
+                    .registryKey(itemKey)
+                    .useBlockPrefixedTranslationKey()
+            )
+        );
 
-    return block;
-}
+        return block;
+    }
+
+    private static Block regTextured(String name, Block fallback, float hardness, float resistance) {
+        Identifier id = Identifier.of("stonepack", name);
+
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
+        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id);
+
+        BlockState clientState = PolymerBlockResourceUtils.requestBlock(fallback, id);
+
+        Block block = new TexturedBlock(
+            fallback,
+            clientState,
+            AbstractBlock.Settings.copy(fallback)
+                .registryKey(blockKey)
+                .strength(hardness, resistance)
+        );
+
+        Registry.register(Registries.BLOCK, id, block);
+        Registry.register(
+            Registries.ITEM,
+            id,
+            new StonepackPolymerBlockItem(
+                block,
+                new Item.Settings()
+                    .registryKey(itemKey)
+                    .useBlockPrefixedTranslationKey()
+            )
+        );
+
+        return block;
+    }
 
     public static void initialize() {}
 }
