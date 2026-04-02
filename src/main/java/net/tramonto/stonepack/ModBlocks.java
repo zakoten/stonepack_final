@@ -1,8 +1,9 @@
 package net.tramonto.stonepack;
 
+import eu.pb4.polymer.blocks.api.BlockModelType;
+import eu.pb4.polymer.blocks.api.PolymerBlockModel;
+import eu.pb4.polymer.blocks.api.PolymerBlockResourceUtils;
 import eu.pb4.polymer.core.api.block.SimplePolymerBlock;
-import eu.pb4.polymer.core.api.item.PolymerBlockItem;
-import eu.pb4.polymer.resourcepack.api.PolymerBlockResourceUtils;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -224,7 +225,8 @@ public class ModBlocks {
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id);
 
-        BlockState clientState = PolymerBlockResourceUtils.requestBlock(fallback, id);
+        PolymerBlockModel model = PolymerBlockModel.of(id);
+        BlockState clientState = PolymerBlockResourceUtils.requestBlock(BlockModelType.FULL_BLOCK, model);
 
         Block block = new TexturedBlock(
             fallback,
