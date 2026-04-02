@@ -14,7 +14,6 @@ public class TexturedBlock extends SimplePolymerBlock implements PolymerTextured
         this.clientState = clientState;
     }
 
-    @Override
     public BlockState getPolymerBlockState(BlockState state) {
         return this.clientState;
     }
