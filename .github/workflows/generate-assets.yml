@@ -20,7 +20,7 @@ jobs:
         run: pip install pillow
 
       - name: Run asset generator
-        run: python stonepack_final/generate_models.py
+        run: python generate_assets.py
 
       - name: Commit generated files
         run: |
