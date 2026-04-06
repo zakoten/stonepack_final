@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/prismarine_chiseled" }
+    "": {
+      "model": "stonepack:block/prismarine_chiseled"
+    }
   }
 }

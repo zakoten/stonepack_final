@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/stone_polished"
-  }
+  "parent": "stonepack:block/stone_polished"
 }

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/granite_chiseled" }
+    "": {
+      "model": "stonepack:block/granite_chiseled"
+    }
   }
 }

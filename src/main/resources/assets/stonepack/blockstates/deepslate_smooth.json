@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/deepslate_smooth" }
+    "": {
+      "model": "stonepack:block/deepslate_smooth"
+    }
   }
 }

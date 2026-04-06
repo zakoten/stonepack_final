@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/diorite_chiseled" }
+    "": {
+      "model": "stonepack:block/diorite_chiseled"
+    }
   }
 }

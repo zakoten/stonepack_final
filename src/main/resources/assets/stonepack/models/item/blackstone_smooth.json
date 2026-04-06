@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/blackstone_smooth"
-  }
+  "parent": "stonepack:block/blackstone_smooth"
 }

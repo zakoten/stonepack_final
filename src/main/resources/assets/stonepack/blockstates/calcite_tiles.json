@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/calcite_tiles" }
+    "": {
+      "model": "stonepack:block/calcite_tiles"
+    }
   }
 }

@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/andesite_smooth"
-  }
+  "parent": "stonepack:block/andesite_smooth"
 }

@@ -1,7 +1,6 @@
 {
-  "parent": "stonepack:block/mossy_block",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "stonepack:block/end_stone_cracked_bricks",
-    "overlay": "stonepack:block/moss_overlay_cracked_bricks"
+    "all": "stonepack:block/mossy_end_stone_cracked_bricks"
   }
 }

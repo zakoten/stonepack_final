@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/dripstone_polished" }
+    "": {
+      "model": "stonepack:block/dripstone_polished"
+    }
   }
 }

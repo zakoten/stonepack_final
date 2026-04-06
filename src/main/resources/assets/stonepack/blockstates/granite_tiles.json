@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/granite_tiles" }
+    "": {
+      "model": "stonepack:block/granite_tiles"
+    }
   }
 }

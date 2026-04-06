@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/granite_chiseled"
-  }
+  "parent": "stonepack:block/granite_chiseled"
 }

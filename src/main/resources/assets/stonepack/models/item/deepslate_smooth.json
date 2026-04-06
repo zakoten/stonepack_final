@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/deepslate_smooth"
-  }
+  "parent": "stonepack:block/deepslate_smooth"
 }

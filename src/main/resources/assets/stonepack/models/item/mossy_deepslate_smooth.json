@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/mossy_deepslate_smooth"
-  }
+  "parent": "stonepack:block/mossy_deepslate_smooth"
 }

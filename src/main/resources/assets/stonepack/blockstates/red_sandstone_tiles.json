@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/red_sandstone_tiles" }
+    "": {
+      "model": "stonepack:block/red_sandstone_tiles"
+    }
   }
 }

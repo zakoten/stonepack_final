@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/end_stone_chiseled" }
+    "": {
+      "model": "stonepack:block/end_stone_chiseled"
+    }
   }
 }

@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/cobbled_calcite"
-  }
+  "parent": "stonepack:block/cobbled_calcite"
 }

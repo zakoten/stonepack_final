@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/blackstone_smooth" }
+    "": {
+      "model": "stonepack:block/blackstone_smooth"
+    }
   }
 }

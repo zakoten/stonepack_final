@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/basalt_tiles" }
+    "": {
+      "model": "stonepack:block/basalt_tiles"
+    }
   }
 }

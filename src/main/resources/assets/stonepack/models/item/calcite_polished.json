@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/calcite_polished"
-  }
+  "parent": "stonepack:block/calcite_polished"
 }

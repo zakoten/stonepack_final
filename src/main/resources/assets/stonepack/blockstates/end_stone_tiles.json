@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/end_stone_tiles" }
+    "": {
+      "model": "stonepack:block/end_stone_tiles"
+    }
   }
 }

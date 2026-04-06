@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/basalt_bricks" }
+    "": {
+      "model": "stonepack:block/basalt_bricks"
+    }
   }
 }

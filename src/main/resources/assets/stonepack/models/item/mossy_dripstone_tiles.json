@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/mossy_dripstone_tiles"
-  }
+  "parent": "stonepack:block/mossy_dripstone_tiles"
 }

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/andesite_cracked_bricks" }
+    "": {
+      "model": "stonepack:block/andesite_cracked_bricks"
+    }
   }
 }

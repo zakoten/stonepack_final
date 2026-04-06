@@ -1,7 +1,6 @@
 {
-  "parent": "stonepack:block/mossy_block",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "stonepack:block/blackstone_smooth",
-    "overlay": "stonepack:block/moss_overlay_smooth"
+    "all": "stonepack:block/mossy_blackstone_smooth"
   }
 }

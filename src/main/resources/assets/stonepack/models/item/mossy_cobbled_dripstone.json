@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/mossy_cobbled_dripstone"
-  }
+  "parent": "stonepack:block/mossy_cobbled_dripstone"
 }

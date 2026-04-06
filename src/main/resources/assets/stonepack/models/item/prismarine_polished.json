@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/prismarine_polished"
-  }
+  "parent": "stonepack:block/prismarine_polished"
 }

@@ -1,6 +1,3 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "stonepack:block/basalt_chiseled"
-  }
+  "parent": "stonepack:block/basalt_chiseled"
 }

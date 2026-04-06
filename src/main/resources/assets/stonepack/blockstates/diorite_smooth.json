@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/diorite_smooth" }
+    "": {
+      "model": "stonepack:block/diorite_smooth"
+    }
   }
 }

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/prismarine_cracked_bricks" }
+    "": {
+      "model": "stonepack:block/prismarine_cracked_bricks"
+    }
   }
 }

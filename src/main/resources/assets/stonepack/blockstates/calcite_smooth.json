@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "stonepack:block/calcite_smooth" }
+    "": {
+      "model": "stonepack:block/calcite_smooth"
+    }
   }
 }
