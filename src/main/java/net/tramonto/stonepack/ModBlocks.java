@@ -14,8 +14,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ModBlocks {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger("stonepack");
 
     // ── BRICKS (8) ──────────────────────────────────────────────
     public static final Block GRANITE_BRICKS           = reg("granite_bricks",           Blocks.GRANITE,                   3.0f, 6.0f);
@@ -222,8 +226,21 @@ public class ModBlocks {
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id);
 
+        LOGGER.info("[stonepack] Requesting textured block for {}", id);
+        LOGGER.info("[stonepack] FULL_BLOCK slots left before request: {}",
+                PolymerBlockResourceUtils.getBlocksLeft(BlockModelType.FULL_BLOCK));
+
         PolymerBlockModel model = PolymerBlockModel.of(id);
         BlockState clientState = PolymerBlockResourceUtils.requestBlock(BlockModelType.FULL_BLOCK, model);
+
+        LOGGER.info("[stonepack] clientState for {} = {}", id, clientState);
+        LOGGER.info("[stonepack] FULL_BLOCK slots left after request: {}",
+                PolymerBlockResourceUtils.getBlocksLeft(BlockModelType.FULL_BLOCK));
+
+        if (clientState == null) {
+            LOGGER.error("[stonepack] requestBlock returned NULL for {}. Falling back to normal reg().", id);
+            return reg(name, fallback, hardness, resistance);
+        }
 
         Block block = new TexturedBlock(
             fallback,
@@ -244,6 +261,8 @@ public class ModBlocks {
                     .useBlockPrefixedTranslationKey()
             )
         );
+
+        LOGGER.info("[stonepack] Registered textured block {} with clientState {}", id, clientState);
 
         return block;
     }
